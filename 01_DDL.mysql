@@ -1,0 +1,43 @@
+-- comentarios
+-- comentario en línea
+# comentario en línea
+/*
+comentario
+multilinea
+*/
+/************** DDL **************/
+-- crear base de datos
+DROP DATABASE IF EXISTS prueba;
+CREATE DATABASE prueba;
+USE prueba;
+-- crear una tabla
+CREATE TABLE certificado(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    title varchar(50)
+);
+CREATE TABLE curso (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    title varchar(50),
+    cantidad_alumnos int
+);
+-- relacionar una tabla
+CREATE TABLE usuario (
+	id INT PRIMARY KEY AUTO_INCREMENT, 
+    nombre VARCHAR(100),
+    dni INT,
+    id_certificado INT, 
+    FOREIGN KEY (id_certificado) REFERENCES certificado(id) 
+);
+
+-- agregar columna 
+ALTER TABLE usuario ADD apellido VARCHAR(50);
+-- modificar columna
+ALTER TABLE usuario MODIFY apellido VARCHAR(50) NOT NULL;
+-- eliminar columna
+ALTER TABLE usuario DROP apellido;
+
+/************** DDL **************/
+
+
+
+
