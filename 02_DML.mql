@@ -1,0 +1,16 @@
+# Registro tabla rol
+INSERT INTO rol (id, rol)
+VALUES (2, "Admin");
+# Registro tabla departamento
+INSERT INTO departamento (id, departamento)
+VALUES (3, "Las Heras");
+
+# Registro tabla usuario
+INSERT INTO usuario (id,nombre,apellido,dni, fecha_de_nacimiento, domicilio,email,contraseña, certificado, curso, departamento_id,rol_id)
+VALUES (1, "Franco", "Rossi", 40457844, "1995-11-29","plaza gc", "franrossi@fran.com", "contraseña", 1, "Base de datos", 1,1);
+# Actualizo registro tabla usuario
+UPDATE usuario
+SET nombre = "Harry"
+WHERE id = 1; 
+# Elimino registro tabla usuario
+DELETE FROM usuario WHERE id = 1;
